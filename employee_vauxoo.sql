@@ -6,6 +6,7 @@
 CREATE TABLE employee (
     id seria PRIMARY KEY,
     department_id integer REFERENCES employee_department,
+    boss integer REFERENCES employee,
     first_name varchar(50) NOT NULL,
     last_name varchar(50) NOT NULL
     
@@ -40,11 +41,10 @@ INSERT INTO employee_department (name, description) VALUES ('mascotas', 'departa
 INSERT INTO employee_department (name, description) VALUES ('computacion', 'departamento de computacion');
 INSERT INTO employee_department (name, description) VALUES ('mercadotecnia', 'departamento de mercadotecnia');
 
-INSERT INTO employee (first_name, last_name,department_id) VALUES ('Carlos','Damian',5);
-INSERT INTO employee (first_name, last_name,department_id) VALUES ('Uriel','Gonzalez',4);
-INSERT INTO employee (first_name, last_name,department_id) VALUES ('Diana','chavez',1);
-INSERT INTO employee (first_name, last_name,department_id) VALUES ('elena','Chavez',6);
-INSERT INTO employee (first_name, last_name,department_id) VALUES ('Diana','chavez',1);
+INSERT INTO employee (first_name, last_name,department_id,boss) VALUES ('Carlos','Damian',5,1);
+INSERT INTO employee (first_name, last_name,department_id,boss) VALUES ('Uriel','Gonzalez',4,2);
+INSERT INTO employee (first_name, last_name,department_id,boss) VALUES ('Diana','chavez',1,4);
+INSERT INTO employee (first_name, last_name,department_id,boss) VALUES ('elena','Chavez',6,4);
 
 INSERT INTO employee_hobby (name, description) VALUES ('lectura', 'leer libros');
 INSERT INTO employee_hobby (name, description) VALUES ('videojuegos', 'jugar videojuegos');
